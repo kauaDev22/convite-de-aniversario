@@ -1,7 +1,7 @@
 body {
     font-family: Arial, sans-serif;
     text-align: center;
-    background: url('https://source.unsplash.com/1600x900/?birthday') no-repeat center center/cover;
+    background: url('img/aniversario.jpg') no-repeat center center/cover;
     color: white;
     height: 100vh;
     display: flex;
@@ -11,29 +11,61 @@ body {
 
 .convite {
     background: rgba(0, 0, 0, 0.7);
-    padding: 20px;
-    border-radius: 10px;
-    max-width: 400px;
+    padding: 40px; /* Aplique o mesmo padding em todos os lados */
+    border-radius: 15px;
+    max-width: 500px;
+    width: 100%;
+    box-sizing: border-box;
+    margin: 0 auto; /* Certifica-se de que o elemento fica centralizado com margens iguais */
 }
 
 h1 {
-    font-size: 24px;
+    font-size: 36px;
+    margin-bottom: 20px;
 }
 
 p {
+    font-size: 22px;
+    margin-bottom: 15px;
+}
+
+.campo {
+    margin: 20px 0;
+}
+
+label {
+    font-size: 20px;
+    display: block;
+    margin-bottom: 10px;
+}
+
+input {
+    padding: 15px;
     font-size: 18px;
+    width: 100%;
+    border-radius: 10px;
+    border: none;
+    margin-top: 10px;
+    background-color: #f2f2f2;
+    color: #333;
 }
 
 button {
-    margin-top: 10px;
-    padding: 10px;
-    font-size: 16px;
+    margin-top: 30px;
+    padding: 15px;
+    font-size: 20px;
     border: none;
-    border-radius: 5px;
+    border-radius: 10px;
     background: #ffcc00;
     cursor: pointer;
+    width: 100%;
 }
 
 button:hover {
     background: #e6b800;
+}
+
+.mensagem {
+    margin-top: 20px;
+    font-size: 18px;
 }

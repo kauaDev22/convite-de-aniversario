@@ -11,14 +11,53 @@
         <h1>Você está convidado! 🎉</h1>
         <p>Venha comemorar meu aniversário!</p>
         <p><strong>📅 Data:</strong> 15 de Abril de 2025</p>
-        <p><strong>📍 Local:</strong> Minha casa</p>
-        <p><strong>⏰ Horário:</strong> 19h</p>
-        <button onclick="confirmarPresenca()">Confirmar Presença</button>
+        <p><strong>📍 Local:</strong> Rua Bananal, casa 245.</p>
+        <p><strong>⏰ Horário:</strong> 18h</p>
+
+        <!-- Formulário de confirmação -->
+        <form id="formConfirmacao" onsubmit="enviarFormulario(event)">
+            <div class="campo">
+                <label for="nome">Nome:</label>
+                <input type="text" id="nome" name="nome" required>
+            </div>
+            <div class="campo">
+                <label for="email">E-mail:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <button type="submit">Confirmar Presença</button>
+        </form>
+
+        <!-- Mensagem de sucesso ou erro -->
+        <div id="mensagem" class="mensagem"></div>
     </div>
 
     <script>
-        function confirmarPresenca() {
-            alert("Presença confirmada! 🎂");
+        function enviarFormulario(event) {
+            event.preventDefault(); // Evita o envio padrão do formulário
+
+            const nome = document.getElementById('nome').value;
+            const email = document.getElementById('email').value;
+
+            // Aqui simula o processo de enviar dados para o servidor
+            // Vamos criar uma simulação de sucesso ou erro
+            const sucesso = Math.random() > 0.2; // 80% chance de sucesso, 20% de erro
+
+            const mensagem = document.getElementById('mensagem');
+            if (sucesso) {
+                // Se a simulação for de sucesso (status 200)
+                mensagem.textContent = 'Confirmado! 🎉';
+                mensagem.style.color = 'green';
+                setTimeout(() => {
+                    mensagem.textContent = ''; // Apaga a mensagem depois de 3 segundos
+                }, 3000);
+            } else {
+                // Se a simulação for de erro
+                mensagem.textContent = 'Erro ao enviar, tente novamente.';
+                mensagem.style.color = 'red';
+                setTimeout(() => {
+                    mensagem.textContent = ''; // Apaga a mensagem depois de 3 segundos
+                }, 3000);
+            }
         }
     </script>
 </body>
